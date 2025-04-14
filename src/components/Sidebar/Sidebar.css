@@ -1,0 +1,116 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f4f9;
+  padding: 20px 12px;
+    /* max-height: 300px;
+    overflow-y: auto; */
+  
+}
+
+.Sidebar img {
+  width: 22px;
+  vertical-align: middle;
+}
+
+.Sidebar .menu {
+  display: block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.Sidebar .new-chat {
+  margin-top: 20px;
+  margin-bottom: 20px; /* reduce space here */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: #e6eaf1;
+  border-radius: 50px;
+  font-size: 14px;
+  color: grey;
+  cursor: pointer;
+}
+
+.Sidebar .recent {
+  margin-top: 30px; 
+  margin-bottom: 20px; /* optional spacing */
+  display: flex;
+  flex-direction: column;
+}
+
+.Sidebar .recent-title {
+  margin-bottom: 10px;
+}
+
+.Sidebar .recent-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  padding-right: 40px;
+  border-radius: 50px;
+  color: #282828;
+  cursor: pointer;
+}
+
+.Sidebar .recent-entry:hover {
+  background-color: #e2e6eb;
+}
+
+.Sidebar .bottom {
+  margin-top: auto;  /* adjust this to control spacing from 'recent' */
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Sidebar .bottom-item {
+  padding-right: 10px;
+  padding: 8px 10px;.Sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    padding: 10px 8px; /* Reduced from 20px 12px */
+  }
+  
+  .Sidebar img {
+    width: 18px; /* Reduced from 22px */
+    vertical-align: middle;
+  }
+  
+  .Sidebar .new-chat {
+    margin-top: 10px; /* Reduced from 20px */
+    margin-bottom: 10px; /* Reduced from 20px */
+    gap: 6px; /* Reduced from 10px */
+    padding: 6px 10px; /* Reduced from 10px 15px */
+    font-size: 12px; /* Reduced from 14px */
+  }
+  
+  .Sidebar .recent {
+    margin-top: 15px; /* Reduced from 30px */
+    margin-bottom: 10px; /* Reduced from 20px */
+  }
+  
+  .Sidebar .recent-title {
+    margin-bottom: 5px; /* Reduced from 10px */
+    font-size: 13px; /* Added to make text smaller */
+  }
+  
+  .Sidebar .recent-entry {
+    gap: 6px; /* Reduced from 10px */
+    padding: 6px 8px 6px 8px; /* Reduced from 10px & 40px right */
+    font-size: 12px; /* Added to make text smaller */
+  }
+  
+  .Sidebar .bottom-item {
+    padding: 5px 8px; /* Reduced from 8px 10px */
+    margin-bottom: 5px; /* Reduced from 10px */
+    font-size: 12px; /* Added to make text smaller */
+  }
+  cursor: pointer;
+  margin-bottom: 10px;
+}

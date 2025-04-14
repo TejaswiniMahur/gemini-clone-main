@@ -1,0 +1,183 @@
+.main {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+}
+
+.main .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    padding: 16px 24px;
+    color: #404040;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.main .nav .user_icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 24px;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.main .greet {
+    margin: 40px 0;
+    font-size: 42px;
+    color: #333333;
+    font-weight: 500;
+    padding: 0 24px;
+}
+
+.main .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 24px;
+}
+
+.main .card {
+    height: 180px;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.main .card img {
+    width: 28px;
+    padding: 6px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 16px;
+    right: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.main .card p {
+    color: #4b5563;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.main .card:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.main-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 24px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.search-box-form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background-color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.search-box img {
+    width: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.search-box img:hover {
+    opacity: 1;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-size: 16px;
+    color: #4b5563;
+}
+
+.search-box div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.send-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .bottom-info {
+    font-size: 12px;
+    margin: 16px auto;
+    text-align: center;
+    color: #6b7280;
+    max-width: 600px;
+}
+
+.main .greet span {
+    background: -webkit-linear-gradient(16deg, #8a4bff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.result {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+/* Add this to make the cards clickable */
+.card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
