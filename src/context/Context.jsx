@@ -1,6 +1,5 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import runChat from "../config/gemini";
-
 
 export const Context = createContext();
 
@@ -12,12 +11,26 @@ const ContextProvider = (props) => {
   const [loading, setLoading] = useState(false);
   const [resultData, setResultData] = useState("");
 
+  // Debug effect to track showResult changes
+  useEffect(() => {
+    console.log("showResult changed:", showResult);
+  }, [showResult]);
+
   const onSent = async () => {
+    if (!input.trim()) return; // Don't send empty prompts
+    
     try {
-      // Your existing code
-      const result = await runChat(input);
-      setResultData(result);
+      setLoading(true);
+      // Important: Only set showResult to true, don't set it to false
+      const response = await runChat(input);
+      setResultData(response);
+      setRecentPrompt(input);
+      setShowResult(true); // This ensures we stay in result view
+      setInput("");
       setLoading(false);
+
+      // Optional: Add the prompt to previous prompts history
+      setPrevPrompts(prev => [...prev, input]);
     } catch (error) {
       setLoading(false);
       
@@ -30,19 +43,6 @@ const ContextProvider = (props) => {
       
       console.error("Error while fetching response:", error);
     }
-    try {
-      setLoading(true);
-      setShowResult(false);
-      const response = await runChat(input);
-      setResultData(response);
-      setRecentPrompt(input);
-      setShowResult(true);
-      setInput("");
-      setLoading(false);
-    } catch (error) {
-      console.error("Error while fetching response:", error);
-      setLoading(false);
-    }
   };
 
   const contextValue = {
@@ -52,6 +52,7 @@ const ContextProvider = (props) => {
     setRecentPrompt,
     recentPrompt,
     showResult,
+    setShowResult, // Make sure this is included
     loading,
     resultData,
     input,
